@@ -19,6 +19,9 @@
 		4869D6361CDAE505006A9306 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869D6351CDAE505006A9306 /* Player.swift */; };
 		4869D6381CDAE517006A9306 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869D6371CDAE517006A9306 /* Question.swift */; };
 		4869D63A1CDAE528006A9306 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869D6391CDAE528006A9306 /* Answer.swift */; };
+		48CB532B1CE169B400E8C2D8 /* JSON in Resources */ = {isa = PBXBuildFile; fileRef = 48CB532A1CE169B400E8C2D8 /* JSON */; };
+		48CB532F1CE1742900E8C2D8 /* PlayerInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB532E1CE1742900E8C2D8 /* PlayerInputViewController.swift */; };
+		48CB53311CE1782100E8C2D8 /* QuestionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB53301CE1782100E8C2D8 /* QuestionPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		4869D6351CDAE505006A9306 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4869D6371CDAE517006A9306 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4869D6391CDAE528006A9306 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		48CB532A1CE169B400E8C2D8 /* JSON */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JSON; path = ../../../../../Documents/JSON; sourceTree = "<group>"; };
+		48CB532E1CE1742900E8C2D8 /* PlayerInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInputViewController.swift; sourceTree = "<group>"; };
+		48CB53301CE1782100E8C2D8 /* QuestionPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		4869D5FE1CDACB45006A9306 /* Buzzer */ = {
 			isa = PBXGroup;
 			children = (
+				48CB532A1CE169B400E8C2D8 /* JSON */,
 				4869D6321CDAE444006A9306 /* Controller */,
 				4869D6311CDAE438006A9306 /* View */,
 				4869D6301CDAE427006A9306 /* Model */,
@@ -160,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				4869D6011CDACB45006A9306 /* MenuViewController.swift */,
+				48CB532E1CE1742900E8C2D8 /* PlayerInputViewController.swift */,
+				48CB53301CE1782100E8C2D8 /* QuestionPickerViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,6 +279,7 @@
 			files = (
 				4869D60D1CDACB45006A9306 /* LaunchScreen.storyboard in Resources */,
 				4869D60A1CDACB45006A9306 /* Assets.xcassets in Resources */,
+				48CB532B1CE169B400E8C2D8 /* JSON in Resources */,
 				4869D6051CDACB45006A9306 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,12 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CB53311CE1782100E8C2D8 /* QuestionPickerViewController.swift in Sources */,
 				4869D6081CDACB45006A9306 /* Buzzer.xcdatamodeld in Sources */,
 				4869D6021CDACB45006A9306 /* MenuViewController.swift in Sources */,
 				4869D6001CDACB45006A9306 /* AppDelegate.swift in Sources */,
 				4869D63A1CDAE528006A9306 /* Answer.swift in Sources */,
 				4869D6381CDAE517006A9306 /* Question.swift in Sources */,
 				4869D6361CDAE505006A9306 /* Player.swift in Sources */,
+				48CB532F1CE1742900E8C2D8 /* PlayerInputViewController.swift in Sources */,
 				4869D6341CDAE4BC006A9306 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +540,7 @@
 				4869D6291CDACB46006A9306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4869D62A1CDACB46006A9306 /* Build configuration list for PBXNativeTarget "BuzzerTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +549,7 @@
 				4869D62C1CDACB46006A9306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4869D62D1CDACB46006A9306 /* Build configuration list for PBXNativeTarget "BuzzerUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +558,7 @@
 				4869D62F1CDACB46006A9306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

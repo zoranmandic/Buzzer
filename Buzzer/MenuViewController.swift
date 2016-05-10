@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuViewController.swift
 //  Buzzer
 //
 //  Created by Zoran Mandic on 2016-05-04.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +21,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func PlayGame(sender: AnyObject) {
+        print("HELLO")
+    }
 }
 

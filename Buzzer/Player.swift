@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class Player {
+    
+    var name = ""
+    var score = 0
+}

@@ -114,21 +114,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZu-tJ-GYP">
-                                <rect key="frame" x="277" y="347" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="285" y="347" width="30" height="30"/>
+                                <state key="normal" title="Play">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eQJ-Hx-rhk" kind="show" id="uCC-Oi-FvD"/>
+                                    <action selector="playGameAction:" destination="OJb-CZ-YXr" eventType="touchUpInside" id="M7t-PV-mCf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="player1Name" destination="Mlk-He-6iI" id="Aoy-nv-cYS"/>
+                        <outlet property="player2Name" destination="D4B-KZ-De5" id="NZQ-rN-suZ"/>
+                        <outlet property="player3Name" destination="87B-dG-QwC" id="mbs-W1-J1U"/>
+                        <segue destination="eQJ-Hx-rhk" kind="show" id="s82-5d-l8w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OD-Mz-3zM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="458"/>
+            <point key="canvasLocation" x="-515" y="444"/>
         </scene>
         <!--Question Picker View Controller-->
         <scene sceneID="h1J-gM-pGB">
@@ -156,43 +162,34 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eJE-fW-Oza">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuestionPrice" id="eJE-fW-Oza" customClass="QuestionPriceCell" customModule="Buzzer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4Z-OD-6wL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4Z-OD-6wL">
                                                     <rect key="frame" x="9" y="19" width="42" height="21"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P9y-dC-Tbl">
-                                        <rect key="frame" x="71" y="64" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uO-U0-lo5">
-                                                    <rect key="frame" x="9" y="19" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="centerX" secondItem="eJE-fW-Oza" secondAttribute="centerX" id="Ib1-cm-mSB"/>
+                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="centerY" secondItem="eJE-fW-Oza" secondAttribute="centerY" id="ix5-0t-aSj"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="T4Z-OD-6wL" id="DzR-hC-lTt"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
+                                    <outlet property="dataSource" destination="eQJ-Hx-rhk" id="Hx1-LF-1Xr"/>
                                     <outlet property="delegate" destination="eQJ-Hx-rhk" id="T91-gj-b5b"/>
                                 </connections>
                             </collectionView>
@@ -207,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkb-O7-oby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="458"/>
+            <point key="canvasLocation" x="160" y="444"/>
         </scene>
     </scenes>
 </document>

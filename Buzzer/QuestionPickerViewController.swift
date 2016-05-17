@@ -13,8 +13,7 @@ private let QuestionPerCategory = 5
 
 class QuestionPickerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var questionCollectionView:
-    UICollectionView!
+    @IBOutlet weak var questionCollectionView: UICollectionView!
     var game: Game?
     
     override func viewDidLoad() {
@@ -45,6 +44,20 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDataSource
 //
 //    return UICollectionViewCell (frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 //    }
+    // MARK: UICollectionViewDelegateFlowLayout
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        // This should almost certainly be the correct kind of layout unless it has been changes in the storyboard
+        if let layout = questionCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let interItemSpacing = layout.minimumInteritemSpacing
+            let totalSpace: CGFloat = CGFloat(numberOfCategories - 1) * interItemSpacing
+            let dimension = floor((questionCollectionView.bounds.width - totalSpace) / CGFloat(numberOfCategories))
+            return CGSize(width: dimension, height: dimension)
+        }
+        
+        // Return UICollectionViewFloatLayout default size
+        return CGSize(width: 50, height: 50)
+    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("QuestionPrice", forIndexPath: indexPath) as? QuestionPriceCell {
@@ -91,7 +104,7 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDataSource
         return column
     }
     
-//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 //        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("QuestionPickerCell", forIndexPath: indexPath) as? QuestionPickerCell {
 //            let price = priceFromIndexPath(indexPath)
 //            cell.priceLabel.text = "$\(price)"

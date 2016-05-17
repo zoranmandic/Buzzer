@@ -201,6 +201,9 @@
                             <constraint firstItem="n5X-nu-h8z" firstAttribute="leading" secondItem="NE1-Mi-qYk" secondAttribute="leadingMargin" id="VGG-ZK-N04"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="questionCollectionView" destination="n5X-nu-h8z" id="qAN-d5-mGV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkb-O7-oby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

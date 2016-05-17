@@ -13,5 +13,13 @@ class QuestionPriceCell: UICollectionViewCell {
 
     @IBOutlet weak var priceLabel: UILabel!
     
+    var answered = false {
+        
+
+       
+        didSet {
+            priceLabel.hidden = answered
+        }
+    }
 
 }

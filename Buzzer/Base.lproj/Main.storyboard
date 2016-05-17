@@ -129,7 +129,7 @@
                         <outlet property="player1Name" destination="Mlk-He-6iI" id="Aoy-nv-cYS"/>
                         <outlet property="player2Name" destination="D4B-KZ-De5" id="NZQ-rN-suZ"/>
                         <outlet property="player3Name" destination="87B-dG-QwC" id="mbs-W1-J1U"/>
-                        <segue destination="eQJ-Hx-rhk" kind="show" id="s82-5d-l8w"/>
+                        <segue destination="eQJ-Hx-rhk" kind="show" identifier="GoToQuestionPicker" id="s82-5d-l8w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OD-Mz-3zM" userLabel="First Responder" sceneMemberID="firstResponder"/>

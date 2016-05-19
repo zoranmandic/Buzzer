@@ -28,4 +28,18 @@ class Game {
             print("Error loading categories: \(error)")
         }
     }
+    
+    func loadCategoriesForNewGame(numberOfCategories: Int, responseActionHandler : (error : NSError?) -> ()) {
+        Category.loadCategories(numberOfCategories, responseHandler: { (error, items) -> () in
+            self.categories = items!
+            
+            if let categoriesArray = items {
+                self.categories = categoriesArray
+            }
+            
+            responseActionHandler(error: error)
+            
+        })
+    }
+    
 }

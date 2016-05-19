@@ -31,7 +31,7 @@ class Question {
     
     
     class func loadQuestion(category: Category, price: Int) throws -> Question {
-        if let jsonPath = NSBundle.mainBundle().pathForResource("Question", ofType: "json"), let jsonData = NSData(contentsOfFile: jsonPath) {
+        if let jsonPath = NSBundle.mainBundle().pathForResource("JSON/Question", ofType: "json"), let jsonData = NSData(contentsOfFile: jsonPath) {
             let json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers)
             
             if let array = json as? Array<AnyObject>, object = array.first as? Dictionary<String, AnyObject> {

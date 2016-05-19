@@ -40,7 +40,14 @@ class PlayerInputViewController: UIViewController {
             game.player1 = player1
             game.player2 = player2
             game.player3 = player3
+            game.loadCategoriesForNewGame(numberOfCategories, responseActionHandler: { (error) -> () in
+                if error == nil {
+                    // TODO: Load UI
+                } else {
+                    print("Error trying to load categories: \(error)")
+                }
             
+            })
            destinationViewController.game = game
         
         }

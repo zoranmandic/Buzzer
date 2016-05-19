@@ -203,11 +203,106 @@
                     </view>
                     <connections>
                         <outlet property="questionCollectionView" destination="n5X-nu-h8z" id="qAN-d5-mGV"/>
+                        <segue destination="ljN-BV-Eby" kind="show" identifier="ShowQuestionBuzzSegue" id="lCg-Df-Usd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkb-O7-oby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="444"/>
+            <point key="canvasLocation" x="77" y="451"/>
+        </scene>
+        <!--Question Buzz View Controller-->
+        <scene sceneID="IwC-xr-CjH">
+            <objects>
+                <viewController id="ljN-BV-Eby" customClass="QuestionBuzzViewController" customModule="Buzzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ste-NB-I3I"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uqq-Qg-HJa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yUd-KN-jka">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYW-j9-oS6">
+                                <rect key="frame" x="265" y="72" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXS-cB-amy">
+                                <rect key="frame" x="284" y="121" width="32" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who buzzed in?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKc-eJ-WYA">
+                                <rect key="frame" x="239" y="348" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e0k-Qu-H4m">
+                                <rect key="frame" x="20" y="158" width="560" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Q2P-dd-1xy"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioC-f2-Sif">
+                                <rect key="frame" x="20" y="550" width="49" height="30"/>
+                                <state key="normal" title="Player1"/>
+                                <connections>
+                                    <action selector="player1ButtonPressed:" destination="ljN-BV-Eby" eventType="touchUpInside" id="gWV-CS-wxg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBc-RZ-W4C">
+                                <rect key="frame" x="528" y="550" width="52" height="30"/>
+                                <state key="normal" title="Player3"/>
+                                <connections>
+                                    <action selector="player3ButtonPressed:" destination="ljN-BV-Eby" eventType="touchUpInside" id="D28-Ot-JX6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ve6-Vb-jRS">
+                                <rect key="frame" x="275" y="550" width="51" height="30"/>
+                                <state key="normal" title="Player2"/>
+                                <connections>
+                                    <action selector="player2ButtonPressed:" destination="ljN-BV-Eby" eventType="touchUpInside" id="Dbt-J8-Dg0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e0k-Qu-H4m" firstAttribute="top" secondItem="fXS-cB-amy" secondAttribute="bottom" constant="16" id="1GX-yT-kzT"/>
+                            <constraint firstItem="PKc-eJ-WYA" firstAttribute="top" secondItem="e0k-Qu-H4m" secondAttribute="bottom" constant="62" id="2Ls-zX-qsP"/>
+                            <constraint firstItem="Uqq-Qg-HJa" firstAttribute="top" secondItem="ve6-Vb-jRS" secondAttribute="bottom" constant="20" id="7ep-uH-kgH"/>
+                            <constraint firstItem="ioC-f2-Sif" firstAttribute="leading" secondItem="yUd-KN-jka" secondAttribute="leadingMargin" id="EVR-7X-ZFj"/>
+                            <constraint firstItem="e0k-Qu-H4m" firstAttribute="trailing" secondItem="yUd-KN-jka" secondAttribute="trailingMargin" id="Fmo-co-qRI"/>
+                            <constraint firstItem="ve6-Vb-jRS" firstAttribute="centerX" secondItem="yUd-KN-jka" secondAttribute="centerX" id="LiX-2g-q9C"/>
+                            <constraint firstItem="fXS-cB-amy" firstAttribute="top" secondItem="cYW-j9-oS6" secondAttribute="bottom" constant="28" id="R3q-ox-2bS"/>
+                            <constraint firstItem="PKc-eJ-WYA" firstAttribute="centerX" secondItem="yUd-KN-jka" secondAttribute="centerX" id="Tx3-os-WrJ"/>
+                            <constraint firstItem="e0k-Qu-H4m" firstAttribute="leading" secondItem="yUd-KN-jka" secondAttribute="leadingMargin" id="UXx-Bd-T3q"/>
+                            <constraint firstItem="Uqq-Qg-HJa" firstAttribute="top" secondItem="DBc-RZ-W4C" secondAttribute="bottom" constant="20" id="Xui-1u-vAa"/>
+                            <constraint firstItem="DBc-RZ-W4C" firstAttribute="trailing" secondItem="yUd-KN-jka" secondAttribute="trailingMargin" id="aFB-Dc-fdg"/>
+                            <constraint firstItem="fXS-cB-amy" firstAttribute="centerX" secondItem="yUd-KN-jka" secondAttribute="centerX" id="gej-sN-8kn"/>
+                            <constraint firstItem="cYW-j9-oS6" firstAttribute="centerX" secondItem="yUd-KN-jka" secondAttribute="centerX" id="i9V-3R-U3J"/>
+                            <constraint firstItem="Uqq-Qg-HJa" firstAttribute="top" secondItem="ioC-f2-Sif" secondAttribute="bottom" constant="20" id="n6m-DR-GRu"/>
+                            <constraint firstItem="cYW-j9-oS6" firstAttribute="top" secondItem="ste-NB-I3I" secondAttribute="bottom" constant="8" id="r7E-kL-Vkq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryNameLabel" destination="cYW-j9-oS6" id="NZa-gX-W2n"/>
+                        <outlet property="categoryPriceLabel" destination="fXS-cB-amy" id="ZEL-SF-494"/>
+                        <outlet property="player1Button" destination="ioC-f2-Sif" id="efk-Pc-f2F"/>
+                        <outlet property="player2Button" destination="ve6-Vb-jRS" id="WMh-ER-hBU"/>
+                        <outlet property="player3Button" destination="DBc-RZ-W4C" id="Yx4-Cc-7rC"/>
+                        <outlet property="questionTextLabel" destination="e0k-Qu-H4m" id="scd-6C-iEJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vtf-mj-7L9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="451"/>
         </scene>
     </scenes>
 </document>

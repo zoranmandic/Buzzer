@@ -7,7 +7,7 @@
 //
 
 import UIKit
-private let numberOfCategories = 4
+ let numberOfCategories = 4
 private let QuestionPerCategory = 5
 
 
@@ -25,7 +25,19 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDataSource
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "ShowQuestionBuzzSegue" {
+            if let destinationViewController = segue.destinationViewController as? QuestionBuzzViewController {
+                destinationViewController.game = game
+            }
+        }
+    }
+    
+    
     //MARK:-UICollectionviewDelegate
     
     //MARK:-UICollectionViewDataSource

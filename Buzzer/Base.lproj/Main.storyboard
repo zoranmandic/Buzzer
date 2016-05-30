@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gua-cF-HrE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gua-cF-HrE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -145,7 +145,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="DZu-tJ-GYP" firstAttribute="top" secondItem="87B-dG-QwC" secondAttribute="bottom" constant="38" id="1aD-og-AUa"/>
                             <constraint firstItem="Mlk-He-6iI" firstAttribute="top" secondItem="36v-kf-VQ5" secondAttribute="bottom" constant="90" id="2p2-fF-7PD"/>
@@ -190,11 +190,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n5X-nu-h8z">
-                                <rect key="frame" x="20" y="72" width="560" height="500"/>
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="KZU-Pk-Oa8"/>
+                                    <constraint firstAttribute="height" constant="508" id="1Br-51-pit"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jcv-Da-obA">
                                     <size key="itemSize" width="60" height="60"/>
@@ -210,19 +210,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4Z-OD-6wL">
-                                                    <rect key="frame" x="15" y="19" width="31" height="21"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4Z-OD-6wL">
+                                                    <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <size key="shadowOffset" width="2" height="-1"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="centerX" secondItem="eJE-fW-Oza" secondAttribute="centerX" id="Ib1-cm-mSB"/>
-                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="centerY" secondItem="eJE-fW-Oza" secondAttribute="centerY" id="ix5-0t-aSj"/>
+                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="bottom" secondItem="eJE-fW-Oza" secondAttribute="bottomMargin" id="Abo-hO-5ex"/>
+                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="trailing" secondItem="eJE-fW-Oza" secondAttribute="trailingMargin" id="bdW-WJ-qot"/>
+                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="leading" secondItem="eJE-fW-Oza" secondAttribute="leadingMargin" id="oPf-AN-rVt"/>
+                                            <constraint firstItem="T4Z-OD-6wL" firstAttribute="top" secondItem="eJE-fW-Oza" secondAttribute="topMargin" id="rge-Gz-IPp"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="priceLabel" destination="T4Z-OD-6wL" id="DzR-hC-lTt"/>
@@ -236,6 +241,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="n5X-nu-h8z" firstAttribute="trailing" secondItem="NE1-Mi-qYk" secondAttribute="trailingMargin" id="4r7-YI-ed3"/>
                             <constraint firstItem="n5X-nu-h8z" firstAttribute="top" secondItem="qbL-lb-9lu" secondAttribute="bottom" constant="8" id="CSP-c9-6e5"/>
@@ -249,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkb-O7-oby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="469"/>
+            <point key="canvasLocation" x="0.0" y="515"/>
         </scene>
         <!--Question Buzz View Controller-->
         <scene sceneID="IwC-xr-CjH">

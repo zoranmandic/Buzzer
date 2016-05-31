@@ -23,7 +23,7 @@ class AnswerInputViewController: UIViewController {
         super.viewDidLoad()
         
       self.configureUIElements()
- 
+    }
         // Do any additional setup after loading the view.
         func configureUIElements()         {
             
@@ -37,7 +37,7 @@ class AnswerInputViewController: UIViewController {
          }
         
         
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

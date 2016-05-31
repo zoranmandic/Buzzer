@@ -43,6 +43,7 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDataSource
     //MARK:-UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) ->Int {
+        
         return numberOfCategories * QuestionPerCategory
     }
     
@@ -60,6 +61,7 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         // This should almost certainly be the correct kind of layout unless it has been changes in the storyboard
+        
         if let layout = questionCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let interItemSpacing = layout.minimumInteritemSpacing
             let totalSpace: CGFloat = CGFloat(numberOfCategories - 1) * interItemSpacing
@@ -93,18 +95,38 @@ class QuestionPickerViewController: UIViewController, UICollectionViewDataSource
         let selectedCategory = categoryFromIndexPath(indexPath)
         
         // Set the selected question on game object
+        
         if let category = game?.categories[selectedCategory] {
-            do {
-                let question = try Question.loadQuestion(category, price: selectedPrice)
-                game?.currentQuestion = question
-                self.performSegueWithIdentifier("ShowQuestionBuzzSegue", sender: nil)
-            }
-            catch let error {
+            
+//            do {
+//                let question = try Question.loadQuestion(category, price: selectedPrice)
+//                game?.currentQuestion = question
+//                self.performSegueWithIdentifier("ShowQuestionBuzzSegue", sender: nil)
+//            }
+//            catch let error {
+//                
+//            print("Error trying to load question: \(error)")
+//                
+            //            }
+            Question.loadQuestion(category, price: selectedPrice, responseHandler: { (error, question) -> () in
+            
+            if error == nil {
+                
+                self.game?.currentQuestion = question
+                
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.performSegueWithIdentifier("ShowQuestionBuzzSegue", sender: nil)
+                })
+                
+            } else {
                 print("Error trying to load question: \(error)")
             }
+            
+        })
+        
         }
     }
-    
+
     private func priceFromIndexPath(indexPath: NSIndexPath) -> Int {
         let row = indexPath.item / numberOfCategories
         let price = (row + 1) * 200

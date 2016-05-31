@@ -21,6 +21,7 @@
 		4869D6381CDAE517006A9306 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869D6371CDAE517006A9306 /* Question.swift */; };
 		4869D63A1CDAE528006A9306 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869D6391CDAE528006A9306 /* Category.swift */; };
 		48852C4C1CE40749007AFACE /* QuestionPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48852C4B1CE40749007AFACE /* QuestionPriceCell.swift */; };
+		489B8C501CFD2690007FB8CF /* AnswerInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B8C4F1CFD2690007FB8CF /* AnswerInputViewController.swift */; };
 		48CB532F1CE1742900E8C2D8 /* PlayerInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB532E1CE1742900E8C2D8 /* PlayerInputViewController.swift */; };
 		48CB53311CE1782100E8C2D8 /* QuestionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CB53301CE1782100E8C2D8 /* QuestionPickerViewController.swift */; };
 		84A2AFD31CED7CA000CF916B /* JSON in Resources */ = {isa = PBXBuildFile; fileRef = 84A2AFD21CED7CA000CF916B /* JSON */; };
@@ -64,6 +65,7 @@
 		4869D6371CDAE517006A9306 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4869D6391CDAE528006A9306 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		48852C4B1CE40749007AFACE /* QuestionPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPriceCell.swift; sourceTree = "<group>"; };
+		489B8C4F1CFD2690007FB8CF /* AnswerInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerInputViewController.swift; sourceTree = "<group>"; };
 		48CB532E1CE1742900E8C2D8 /* PlayerInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInputViewController.swift; sourceTree = "<group>"; };
 		48CB53301CE1782100E8C2D8 /* QuestionPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPickerViewController.swift; sourceTree = "<group>"; };
 		84A2AFD21CED7CA000CF916B /* JSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSON; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				48CB532E1CE1742900E8C2D8 /* PlayerInputViewController.swift */,
 				48CB53301CE1782100E8C2D8 /* QuestionPickerViewController.swift */,
 				4813AC1A1CED4CEE0033ED6A /* QuestionBuzzViewController.swift */,
+				489B8C4F1CFD2690007FB8CF /* AnswerInputViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				4869D6021CDACB45006A9306 /* MenuViewController.swift in Sources */,
 				48852C4C1CE40749007AFACE /* QuestionPriceCell.swift in Sources */,
 				4869D6001CDACB45006A9306 /* AppDelegate.swift in Sources */,
+				489B8C501CFD2690007FB8CF /* AnswerInputViewController.swift in Sources */,
 				4869D63A1CDAE528006A9306 /* Category.swift in Sources */,
 				4869D6381CDAE517006A9306 /* Question.swift in Sources */,
 				4869D6361CDAE505006A9306 /* Player.swift in Sources */,

@@ -50,18 +50,18 @@ class QuestionBuzzViewController: UIViewController {
     */
     func showAnswerInputWithPlayer(player: Player) {
         game?.currentPlayer = player
-        //        performSegueWithIdentifier("ShowAnswerInputSegue", sender: nil)
+        performSegueWithIdentifier("ShowAnswerInputSegue", sender: nil)
     }
     
     // #pragma mark - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //
-        //        if segue.identifier == "ShowAnswerInputSegue" {
-        //            if let destinationViewController = segue.destinationViewController as? AnswerInputViewController {
-        //                destinationViewController.game = game
-        //            }
-        //        }
+       
+               if segue.identifier == "ShowAnswerInputSegue" {
+                   if let destinationViewController = segue.destinationViewController as? AnswerInputViewController {
+                      destinationViewController.game = game
+                  }
+             }
     }
     
     // #pragma mark - IBActions

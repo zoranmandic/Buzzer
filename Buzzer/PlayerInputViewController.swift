@@ -16,6 +16,7 @@ class PlayerInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+   
     }
     
     @IBAction func playGameAction(sender: AnyObject) {
@@ -24,7 +25,9 @@ class PlayerInputViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "GoToQuestionPicker" {
+            
             if let destinationViewController = segue.destinationViewController as? QuestionPickerViewController {
              
                 let player1 = Player()
@@ -52,6 +55,9 @@ class PlayerInputViewController: UIViewController {
                     player3.name = "Player 3"
                }
             
+                
+                
+                
        /*   let player1 = Player()
             player1.name = player1Text.text
             if let enteredName = Player1Text.text where enteredName.characters.count > 0
@@ -75,18 +81,23 @@ class PlayerInputViewController: UIViewController {
                     print("Error trying to load categories: \(error)")
                 }
             
+            
+            
             })
               
                 
            destinationViewController.game = game
                 
-        
+                
+                
         }
+            
+            
+            
+    }
+
     }
     
     
     }
-    
-    
-    
-}
+

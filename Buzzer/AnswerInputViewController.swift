@@ -23,24 +23,22 @@ class AnswerInputViewController: UIViewController {
         super.viewDidLoad()
         
       self.configureUIElements()
+  
     }
         // Do any additional setup after loading the view.
-        func configureUIElements()         {
+    
+    func configureUIElements()         {
             
             categoryLabel.text = game?.currentQuestion?.category?.title
             priceLabel.text = game?.currentQuestion?.formattedPrice()
             questionTextView.text = game?.currentQuestion?.question
-            
-         
-       
+        
 
          }
-        
-        
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+       
         // Dispose of any resources that can be recreated.
     }
     

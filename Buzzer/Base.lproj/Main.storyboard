@@ -392,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vtf-mj-7L9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="529"/>
+            <point key="canvasLocation" x="-103" y="509"/>
         </scene>
         <!--Answer Input View Controller-->
         <scene sceneID="3qA-2V-Fak">
@@ -498,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAx-DE-rvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-141" y="529"/>
+            <point key="canvasLocation" x="542" y="509"/>
         </scene>
         <!--Answer Verification View Controller-->
         <scene sceneID="ESR-oW-yKv">
@@ -625,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZT-CF-cyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="529"/>
+            <point key="canvasLocation" x="1170" y="509"/>
         </scene>
     </scenes>
     <resources>

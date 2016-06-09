@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gua-cF-HrE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gua-cF-HrE">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -59,6 +59,9 @@
                                 <state key="normal" title="High Scores">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="1IS-Fp-P9g" kind="show" id="Ofy-dl-3EE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,6 +77,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g68-b0-SfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2100" y="509"/>
+        </scene>
+        <!--High Scores Table View Controller-->
+        <scene sceneID="yOj-Rs-HCv">
+            <objects>
+                <tableViewController id="1IS-Fp-P9g" customClass="HighScoresTableViewController" customModule="Buzzer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gUX-52-RCI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HighScoreIdentifier" id="Eyc-Uy-NdC">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eyc-Uy-NdC" id="jgG-2x-TqK">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWl-O2-X93">
+                                            <rect key="frame" x="8" y="11" width="97" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="97" id="Sz4-eV-61x"/>
+                                                <constraint firstAttribute="height" constant="21" id="oI6-kG-laH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBF-gP-LbV">
+                                            <rect key="frame" x="496" y="11" width="96" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="96" id="Vkz-gi-tgi"/>
+                                                <constraint firstAttribute="height" constant="21" id="rCH-kw-x4H"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LBF-gP-LbV" firstAttribute="top" secondItem="jgG-2x-TqK" secondAttribute="topMargin" constant="3" id="2uP-Ve-W8a"/>
+                                        <constraint firstItem="fWl-O2-X93" firstAttribute="leading" secondItem="jgG-2x-TqK" secondAttribute="leadingMargin" id="6hZ-Mu-yy2"/>
+                                        <constraint firstItem="LBF-gP-LbV" firstAttribute="trailing" secondItem="jgG-2x-TqK" secondAttribute="trailingMargin" id="CZb-f1-tj1"/>
+                                        <constraint firstItem="fWl-O2-X93" firstAttribute="top" secondItem="jgG-2x-TqK" secondAttribute="topMargin" constant="3" id="FKi-vc-z4s"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1IS-Fp-P9g" id="IJi-cQ-Zc1"/>
+                            <outlet property="delegate" destination="1IS-Fp-P9g" id="lP6-iM-K3t"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vO8-Mm-9YY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2100" y="-188"/>
         </scene>
         <!--Player Input View Controller-->
         <scene sceneID="RjR-4D-xCd">
@@ -392,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vtf-mj-7L9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103" y="509"/>
+            <point key="canvasLocation" x="-113" y="509"/>
         </scene>
         <!--Answer Input View Controller-->
         <scene sceneID="3qA-2V-Fak">
@@ -498,7 +557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAx-DE-rvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="509"/>
+            <point key="canvasLocation" x="536" y="509"/>
         </scene>
         <!--Answer Verification View Controller-->
         <scene sceneID="ESR-oW-yKv">

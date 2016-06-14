@@ -10,8 +10,16 @@ import UIKit
 
 class HighScoresTableViewController: UITableViewController {
 
+ 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
+        
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -47,6 +55,7 @@ class HighScoresTableViewController: UITableViewController {
         return cell
     }
  
+  
     /*
     // MARK: - Navigation
 

@@ -43,8 +43,19 @@ class AnswerInputViewController: UIViewController {
     }
     
     @IBAction func checkAnswer(sender: AnyObject) {
+        
+        performSegueWithIdentifier("AnswerVerificationSegue", sender: nil)
     }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "AnswerVerificationSegue" {
+            
+            if let destinationViewController = segue.destinationViewController as? AnswerVerificationViewController {
+                
+                destinationViewController.game = game
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

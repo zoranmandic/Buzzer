@@ -7,28 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class HighScoresTableViewController: UITableViewController {
 
- 
-    
+    var highScores: [HighScore] = []
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
         
-     
+      self.loadHighScores()
         
         
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
+      func loadHighScores() {
+            guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate else { return }
+            let fetchRequest = NSFetchRequest(entityName: "HighScore")
+            
+            do {
+                let fetchResults = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+                if let results = fetchResults as? [HighScore] {
+                highScores = results
+                    self.tableView.reloadData()
+                }
+                
+            }catch let error {
+                
+                print("Error loading high scores: \(error)")
+           }
+        }
+       
+        
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -43,16 +53,26 @@ class HighScoresTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-               return 1
+               return highScores.count
     }
 
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HighScoreIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
+        guard let highScoreCell = cell as? HighScoreTableViewCell else { return cell
+            
+            
+    }
+         // Configure the cell...
+        
+        let score = highScores[indexPath.row]
+        highScoreCell.playerNameLabel.text = score.playerName
+        highScoreCell.playerScoreLabel.text = score.playerScore?.stringValue
+        
+       
 
-        return cell
+        return highScoreCell
     }
  
   

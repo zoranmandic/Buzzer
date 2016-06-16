@@ -43,7 +43,7 @@ class AnswerInputViewController: UIViewController {
     }
     
     @IBAction func checkAnswer(sender: AnyObject) {
-        
+       game?.currentQuestion?.playerAnswer = answerTextLabel.text
         performSegueWithIdentifier("AnswerVerificationSegue", sender: nil)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

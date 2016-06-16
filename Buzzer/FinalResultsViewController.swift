@@ -7,16 +7,73 @@
 //
 
 import UIKit
+import CoreData
 
 class FinalResultsViewController: UIViewController {
-var game: Game?
+   
+    @IBOutlet var playerNames: [UILabel]!
+
+    
+    
+    var game: Game?
+    
+    @IBAction func playAgainActon(sender: AnyObject) {
+     
+   
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    func saveHighScore(player: Player) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let highScore = NSEntityDescription.insertNewObjectForEntityForName("HighScore", inManagedObjectContext: appDelegate.managedObjectContext) as! HighScore
+        
+        highScore.playerName = player.name
+        highScore.playerScore = player.score
+        appDelegate.saveContext()
+        
+    }
+    
+    
+    func configureUI() {
+        
+    var players = [Player]()
+        if let player1 = game?.player1 {
+        players.append(player1)
+        
+        }
+        if let player2 = game?.player2 {
+            players.append(player2)
+            
+        }
+        if let player3 = game?.player3 {
+            players.append(player3)
+            
+        }
+   
+        players.sortInPlace({ $0.score > $1.score
+        
+        })
+    
+        for i in 0..<3 {
+            
+            playerNames[i].text = "\(players[i].name) \(players[i].score)"
+        
+        }
+        
+    saveHighScore(players[0])
+    
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

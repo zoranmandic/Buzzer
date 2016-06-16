@@ -19,7 +19,7 @@ class Game {
     var currentQuestion: Question?
     var categories: [Category] = []
     
-
+    
     func loadCategoriesForNewGame() {
         do {
             categories = try Category.loadCategories()
@@ -42,4 +42,18 @@ class Game {
         })
     }
     
+    func curentPlayerGotItRight() {
+        
+        guard let currentPlayer = currentPlayer else { return }
+        guard let price = currentQuestion?.price else { return }
+        currentPlayer.score += price
+    }
+    
+    
+    func curentPlayerGotItWrong() {
+        
+        guard let currentPlayer = currentPlayer else { return }
+        guard let price = currentQuestion?.price else { return }
+        currentPlayer.score -= price
+    }
 }

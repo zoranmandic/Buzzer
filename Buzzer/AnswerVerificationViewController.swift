@@ -12,12 +12,31 @@ class AnswerVerificationViewController: UIViewController {
     
     var game: Game?
     
+    @IBOutlet var categoryNameLabel: UILabel!
+    @IBOutlet var categoryPriceLabel: UILabel!
+    @IBOutlet var questionTextLabel: UITextView!
+    @IBOutlet weak var answerTextLabel: UITextView!
+    @IBOutlet weak var corectButton: UIButton!
+    @IBOutlet weak var wrongButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.configureUIElements()
         // Do any additional setup after loading the view.
     }
 
+    
+    func configureUIElements() {
+        
+        categoryNameLabel.text = game?.currentQuestion?.category?.title
+        categoryPriceLabel.text = game?.currentQuestion?.formattedPrice()
+        questionTextLabel.text = game?.currentQuestion?.answer
+        answerTextLabel.text = game?.currentQuestion?.playerAnswer
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,7 +48,25 @@ class AnswerVerificationViewController: UIViewController {
         
     }
     
+    @IBAction func corectAnswerAction(sender: AnyObject) {
+        game?.curentPlayerGotItRight()
+        
+        let alert = UIAlertController(title: "Yahoo", message: "You Got it right", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Destructive, handler: { alert in
+         print("ksdg")
+        }))
+        
+            corectButton.enabled = false
+            wrongButton.enabled = false
+     
+        
+        presentViewController(alert, animated: true, completion: nil)
+        }
     
+    @IBAction func wrongAnswerAction(sender: AnyObject) {
+
+       
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

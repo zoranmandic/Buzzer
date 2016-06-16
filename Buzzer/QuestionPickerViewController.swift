@@ -51,17 +51,21 @@
     
     }
         
+   /*
     
-    
-//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) ->
-//        UICollectionViewCell {
-//            if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("QuestionPrice", forIndexPath: indexPath) as? QuestionPriceCell{
-//                cell.priceLabel.text = "$999"
-//                return cell
-//    }
-//
-//    return UICollectionViewCell (frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-//    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) ->
+        UICollectionViewCell {
+         
+            if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("QuestionPrice", forIndexPath: indexPath) as? QuestionPriceCell{
+                cell.priceLabel.text = "$999"
+                return cell
+    }
+
+    return UICollectionViewCell (frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    }
+        
+      */
+        
     // MARK: UICollectionViewDelegateFlowLayout
         
         

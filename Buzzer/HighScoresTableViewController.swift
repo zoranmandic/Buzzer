@@ -23,7 +23,12 @@ class HighScoresTableViewController: UITableViewController {
       func loadHighScores() {
             guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate else { return }
             let fetchRequest = NSFetchRequest(entityName: "HighScore")
-            
+        
+        let sort = NSSortDescriptor(key: "playerScore", ascending: false)
+        _ = NSSortDescriptor(key: "playerName", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        fetchRequest.fetchLimit = 5
+        
             do {
                 let fetchResults = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
                 if let results = fetchResults as? [HighScore] {

@@ -24,5 +24,9 @@ class MenuViewController: UIViewController {
     @IBAction func PlayGame(sender: AnyObject) {
         print("HELLO")
     }
+    
+   @IBAction func unwindToMenuViewController(segue: UIStoryboardSegue) {
+    
+    }
 }
 

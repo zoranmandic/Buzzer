@@ -49,9 +49,10 @@ class AnswerVerificationViewController: UIViewController {
     }
     
     @IBAction func corectAnswerAction(sender: AnyObject) {
-        game?.curentPlayerGotItRight()
+
         
-        let alert = UIAlertController(title: "Yahoo", message: "You Got it right", preferredStyle: .Alert)
+        game?.curentPlayerGotItRight()
+                let alert = UIAlertController(title: "Yahoo", message: "You Got it right", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "OK", style: .Destructive, handler: { alert in
          print("ksdg")
         }))
@@ -65,6 +66,9 @@ class AnswerVerificationViewController: UIViewController {
     
     @IBAction func wrongAnswerAction(sender: AnyObject) {
 
+        
+        
+        
        
     }
     
